@@ -58,4 +58,3 @@ public static class MetaLicenseGenerator
         JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }
-

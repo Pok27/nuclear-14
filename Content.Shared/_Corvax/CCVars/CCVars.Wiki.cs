@@ -20,7 +20,7 @@ public sealed partial class CCVars
     /// Prefixes for prototype folders included in entity_project generation. Comma-separated.
     /// </summary>
     public static readonly CVarDef<string> EntityProjectFolderPrefix =
-        CVarDef.Create("autogen.entity_project.folder_prefix", "_, Corvax", CVar.ARCHIVE);
+        CVarDef.Create("autogen.entity_project.folder_prefix", "_, Corvax, DeltaV, SimpleStation14, WhiteDream, Nyanotrasen", CVar.ARCHIVE);
 
     /// <summary>
     /// Prototype folder names to exclude from entity_project generation. Comma-separated.

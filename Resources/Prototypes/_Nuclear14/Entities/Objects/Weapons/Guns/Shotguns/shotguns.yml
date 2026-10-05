@@ -1,6 +1,6 @@
 - type: entity
   name: N14WeaponShotgunBase
-  parent: BaseItem
+  parent: [ BaseItem, ForgeGunConditionProfileShotgun ]
   id: N14WeaponShotgunBase
   description: A rooty tooty point and shooty.
   abstract: true
@@ -36,6 +36,24 @@
     price: 10
   - type: FollowDistance
     backStrength: 5
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 18.0 # Forge-Change
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
   - type: Wieldable
   - type: Craftable
 
@@ -125,10 +143,13 @@
   - type: Sprite
     sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/sawed_off.rsi
   - type: Item
-    size: Normal # Forge-Change
+    size: Small
+    shape:
+    - 0,0,1,1
+    - 0,1,0,1
     sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/sawed_off.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 6
     soundGunshot:
       collection: N14DoubleBarrelShotgunGunshot
   - type: BallisticAmmoProvider
@@ -160,7 +181,8 @@
 
 - type: entity
   name: combat shotgun
-  parent: N14WeaponShotgunBase
+  # Don't parent to N14BaseWeaponShotgun because it differs significantly
+  parent: [BaseItem, BaseGunWieldable]
   id: N14WeaponShotgunAuto
   description: "It's a magazine-fed automatic shotgun designed for close quarters combat, uses 12 gauge shells."
   components:
@@ -218,6 +240,24 @@
   - type: Appearance
   - type: StaticPrice
     price: 100
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 18 # Forge-Change
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
 
 - type: entity
   name: caravan shotgun
@@ -295,7 +335,8 @@
 
 - type: entity
   name: riot shotgun
-  parent: N14WeaponShotgunBase
+  # Don't parent to N14BaseWeaponShotgun because it differs significantly
+  parent: [BaseItem, BaseGunWieldable]
   id: N14WeaponShotgunRiot
   description: A compact semiautomatic shotgun used by pre-war police forces, chambered in 20 gauge shells and using a drum magazine.
   components:
@@ -354,6 +395,24 @@
   - type: Appearance
   - type: StaticPrice
     price: 90
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 18
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
 
 - type: entity
   name: stockless shotgun
@@ -531,7 +590,7 @@
     disableHeavy: true
     damage:
       types:
-        Blunt: 12
+        Blunt: 18 # Forge-Change
     animation: WeaponArcThrust
     wideAnimationRotation: -135
     soundHit:
@@ -588,8 +647,8 @@
     range: 1.75
     damage:
       types:
-        Piercing: 6
-        Slash: 5
+        Piercing: 10 # Forge-Change
+        Slash: 15 # Forge-Change
     animation: WeaponArcThrust
     wideAnimationRotation: -135
     soundHit:

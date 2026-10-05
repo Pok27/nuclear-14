@@ -74,6 +74,31 @@
 
 - type: entity
   parent: N14FalloutArmorBase
+  id: N14ClothingOuterCinderCenturionArmor
+  name: сenturion cinder armor
+  description: "The broad armor offers excellent protection for the wearer, despite being assembled from various types of armor; the pauldrons appear to be taken from a rather rare set of power armor."
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/centurioncinderarmor.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/centurioncinderarmor.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.5
+        Heat: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: StaminaDamageResistance
+    coefficient: 0.85
+
+- type: entity
+  parent: N14FalloutArmorBase
   id: N14ClothingOuterDeanLegionnaireVeteranArmor
   name: heavy legionary armor
   description: "The heavy version of legionary armor slows down the wearer, but gives good protection from external threats."
@@ -313,6 +338,21 @@
     damageCoefficient: 0.85
 
 - type: entity
+  parent: N14ClothingOuterLegionnaireBaseArmor
+  id: N14ClothingOuterLegionnaireVexillariusArmor
+  name: vexillarius armor
+  description: The armor of the Legion vexillarius, the standard-bearer. Decorated with the colors of the Legion.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/vexarmor.rsi
+    scale: 0.5, 0.5
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/vexarmor.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.05
+    sprintModifier: 1.05
+
+- type: entity
   parent: N14FalloutArmorBase
   id: N14ClothingOuterLegionnaireRecruitArmor
   name: light legionnaire armor
@@ -448,7 +488,7 @@
 
 - type: entity
   parent: N14ClothingOuterNCRVeteranArmor # _Nuclear14/Entities/Clothing/OuterClothing/falloutarmor.yml
-  id: N14ClothingOuterNCRVeteranArmorSnow 
+  id: N14ClothingOuterNCRVeteranArmorSnow
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/Armor/falloutNCRveteranarmorSnow.rsi
@@ -731,3 +771,158 @@
     priceMultiplier: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.7
+
+- type: entity
+  parent: N14ClothingOuterLegionnaireLightReconnaissanceArmor
+  id: N14ClothingOuterLegionnaireDuster
+  name: legionary duster
+  description: "Duster with a bull symbol"
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/legioduster.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/legioduster.rsi
+
+- type: entity
+  parent: N14ClothingOuterLegionnaireReconnaissanceArmor
+  id: N14ClothingOuterLegionnaireDusterMk2
+  name: legionary duster mk2
+  description: "Duster with a bull symbol, reinforced for veteran legionnaires."
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/legiodustermk2.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/legiodustermk2.rsi
+
+- type: entity
+  parent: N14FalloutArmorBase
+  id: N14ClothingOuterTireArmor
+  name: tire armor
+  description: "Armor made from burnt car tires."
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/tirearmor.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/tirearmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+
+- type: entity
+  parent: N14FalloutArmorBase
+  id: N14ClothingOuterHeavySteelArmor
+  name: heavy steel armor
+  description: "Made from scrap metal and steel, it has a leather lining."
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/heavysteelarmor.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/heavysteelarmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.75
+        Piercing: 0.7
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+
+- type: entity
+  parent: N14FalloutArmorBase
+  id: N14ClothingOuterVaultTecCombatArmor
+  name: vault-tec combat armor
+  description: "A combination of two versions of combat armor developed by the corporation"
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/vault-tekcombatarmor.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/vault-tekcombatarmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.685
+        Slash: 0.685
+        Piercing: 0.685
+        Heat: 0.685
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+
+- type: entity
+  parent: N14FalloutArmorBase
+  id: N14ClothingOuterArmoredKit
+  name: armor kit
+  description: Light armor worn over clothing. Its better then nothing.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/Reinforcedarmormk1.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/Reinforcedarmormk1.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: N14FalloutArmorBase
+  id: N14ClothingOuterReinforcedArmorKit
+  name: reinforced armor kit
+  description: Less light armor worn over clothing.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/Reinforcedarmormk2.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/Reinforcedarmormk2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+
+- type: entity
+  parent: N14ClothingOuterBase
+  id: M14ClothingOuterKhanLeather
+  name: great khan leather vest
+  description: A black leather jacket. There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns. The skull has a mongoloid moustache - it's obviously a Great Khans emblem.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/Lightarmorgreatkhan.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/Lightarmorgreatkhan.rsi
+  - type: Armor
+    modifiers:
+     coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: N14ClothingOuterBase
+  id: M14ClothingOuterKhanLeatherArmored
+  name: great khan armored leather vest
+  description: A black leather jacket. There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns. The skull has a mongoloid moustache - it's obviously a Great Khans emblem.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Armor/Midarmorgreatkhan.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Armor/Midarmorgreatkhan.rsi
+  - type: Armor
+    modifiers:
+     coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.85
+        Heat: 0.85

@@ -30,8 +30,8 @@ public sealed partial class NcContractSystem : EntitySystem
             if (TerminatingOrDeleted(pinpointer))
                 continue;
 
-            if (!_pinpointerService.TryGetOwner(_objectiveRuntime, pinpointer, out var owner) ||
-                !TryResolveGhostRolePinpointerTargetForUser(key.Store, owner, contract, state, out var target) ||
+            if (!TryGetPinpointerCarrier(pinpointer, out var carrier) ||
+                !TryResolveGhostRolePinpointerTargetForUser(key.Store, carrier, contract, state, out var target) ||
                 target == EntityUid.Invalid ||
                 TerminatingOrDeleted(target))
                 continue;
@@ -71,7 +71,7 @@ public sealed partial class NcContractSystem : EntitySystem
         return true;
     }
 
-    private void FailExpiredGhostRoleObjective((EntityUid Store, string ContractId) key)
+    private void ExpireUnacceptedGhostRoleObjective((EntityUid Store, string ContractId) key)
     {
         if (!_objectiveRuntime.ByContract.TryGetValue(key, out var state) ||
             state.GhostRoleTaken ||
@@ -92,12 +92,11 @@ public sealed partial class NcContractSystem : EntitySystem
             state,
             GhostRoleRoundEndOutcome.NotAccepted,
             Loc.GetString("nc-store-contract-ghost-role-timeout"));
-        FinalizeObjectiveTerminalOutcome(
+        RemoveObjectiveContractAndRefill(
             key,
             comp,
-            contract,
-            Loc.GetString("nc-store-contract-ghost-role-timeout"),
-            ContractObjectiveOutcome.NotAccepted);
+            true,
+            false);
     }
 
     private void HandleGhostRoleTargetResolved(

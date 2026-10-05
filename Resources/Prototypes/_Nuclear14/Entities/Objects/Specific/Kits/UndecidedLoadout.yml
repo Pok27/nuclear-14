@@ -74,7 +74,7 @@
   - type: UndecidedLoadoutBackpack
     possibleSets:
     - NCRA_SurgeonSet
-    - NCRA_DoctorSet
+    # - NCRA_DoctorSet
     - NCRA_ComMedSet
 
 - type: entity
@@ -146,17 +146,17 @@
     state: rifleman
   - type: UndecidedLoadoutBackpack
     possibleSets:
-    - RangerServiceSet
-    - RangerRiflemanSet
-    - RangerMarksmanSet
-    - RangerCQBSet
-    - RangerTrailmanSet
-    - RangerSMGSet # Forge-Change
     - VeteranRangerServiceSet
     - VeteranRangerRiflemanSet
     - VeteranRangerHeavySniperSet
-    - VeteranRangerAssaultSet
-    - VeteranRangerMarksmanSet
+# Forge: RangerServiceSet disabled
+# Forge: RangerRiflemanSet disabled
+# Forge: RangerMarksmanSet disabled
+# Forge: RangerCQBSet disabled
+# Forge: RangerTrailmanSet disabled
+# Forge: RangerSMGSet disabled
+# Forge: VeteranRangerAssault disabled
+# Forge: VeteranRangerMarksmanSet disabled
 
 # Brotherhood Initiates
 - type: entity
@@ -171,6 +171,7 @@
     possibleSets:
     - MBoS_IniLas_Set
     - MBoS_IniBal_Set
+    - MBoS_IniStTr_Set
 
 - type: entity
   id: BoSWashingtonInitSet
@@ -198,6 +199,10 @@
     possibleSets:
     - MBoS_KniLas_Set
     - MBoS_KniBal_Set
+    - MBoS_KniStTr_Set
+    - MBoS_KniSnip_Set
+
+#forge-add 
 
 - type: entity
   id: BoSWashingtonKnightSet
@@ -289,7 +294,7 @@
     - TownGuard_Patr_Set
     - TownGuard_Lawb_Set
     - TownGuard_Brea_Set
-    - TownGuard_Riot_Set
+    #- TownGuard_Riot_Set
 
 # Here do the individual ALREADY DECIDED kits start
 # NCRA Cadet Kits
@@ -416,15 +421,15 @@
   content:
   - KitNCR_MedSurgeon
 
-- type: UndecidedLoadoutBackpackSet
-  id: NCRA_DoctorSet
-  name: undecided-loadout-category-med-doc-name
-  description: undecided-loadout-category-med-doc-description
-  sprite:
-    sprite: _Nuclear14/Objects/Misc/kits.rsi
-    state: medic
-  content:
-  - KitNCR_MedDoctor
+# - type: UndecidedLoadoutBackpackSet # Forge-Change
+#   id: NCRA_DoctorSet
+#   name: undecided-loadout-category-med-doc-name
+#   description: undecided-loadout-category-med-doc-description
+#   sprite:
+#     sprite: _Nuclear14/Objects/Misc/kits.rsi
+#     state: medic
+#   content:
+#   - KitNCR_MedDoctor 
 
 - type: UndecidedLoadoutBackpackSet
   id: NCRA_ComMedSet
@@ -643,25 +648,26 @@
   content:
   - KitHeavySniperRangerVeteran
 
-- type: UndecidedLoadoutBackpackSet
-  id: VeteranRangerAssaultSet
-  name: undecided-loadout-category-veteran-ranger-assault-name
-  description: undecided-loadout-category-veteran-ranger-assault-description
-  sprite:
-    sprite: _Nuclear14/Objects/Misc/kits.rsi
-    state: rifleman
-  content:
-  - KitAssaultRangerVeteran
+# Forge disable
+# - type: UndecidedLoadoutBackpackSet
+#   id: VeteranRangerAssaultSet
+#   name: undecided-loadout-category-veteran-ranger-assault-name
+#   description: undecided-loadout-category-veteran-ranger-assault-description
+#   sprite:
+#     sprite: _Nuclear14/Objects/Misc/kits.rsi
+#     state: rifleman
+#   content:
+#   - KitAssaultRangerVeteran
 
-- type: UndecidedLoadoutBackpackSet
-  id: VeteranRangerMarksmanSet
-  name: undecided-loadout-category-veteran-ranger-marksman-name
-  description: undecided-loadout-category-veteran-ranger-marksman-description
-  sprite:
-    sprite: _Nuclear14/Objects/Misc/kits.rsi
-    state: marksman
-  content:
-  - KitMarksmanRangerVeteran
+# - type: UndecidedLoadoutBackpackSet
+#   id: VeteranRangerMarksmanSet
+#   name: undecided-loadout-category-veteran-ranger-marksman-name
+#   description: undecided-loadout-category-veteran-ranger-marksman-description
+#   sprite:
+#     sprite: _Nuclear14/Objects/Misc/kits.rsi
+#     state: marksman
+#   content:
+#   - KitMarksmanRangerVeteran
 
 # MBoS Initiate
 - type: UndecidedLoadoutBackpackSet
@@ -684,6 +690,16 @@
   content:
   - KitMBoS_IniBal
 
+- type: UndecidedLoadoutBackpackSet
+  id: MBoS_IniStTr_Set
+  name: undecided-loadout-category-mbos-init-sttr-name
+  description: undecided-loadout-category-mbos-init-sttr-description
+  sprite:
+    sprite: _Nuclear14/Objects/Misc/kits.rsi
+    state: rifleman
+  content:
+  - KitMBoS_IniStTr
+
 # MBoS Knight
 - type: UndecidedLoadoutBackpackSet
   id: MBoS_KniLas_Set
@@ -704,6 +720,26 @@
     state: rifleman
   content:
   - KitMBoS_KniBal
+
+- type: UndecidedLoadoutBackpackSet
+  id: MBoS_KniStTr_Set
+  name: undecided-loadout-category-mbos-kni-sttr-name
+  description: undecided-loadout-category-mbos-kni-sttr-description
+  sprite:
+    sprite: _Nuclear14/Objects/Misc/kits.rsi
+    state: rifleman
+  content:
+  - KitMBoS_KniStTr
+
+- type: UndecidedLoadoutBackpackSet
+  id: MBoS_KniSnip_Set
+  name: undecided-loadout-category-mbos-kni-snip-name
+  description: undecided-loadout-category-mbos-kni-snip-description
+  sprite:
+    sprite: _Nuclear14/Objects/Misc/kits.rsi
+    state: rifleman
+  content:
+  - KitMBoS_KniSnip
 
 # MBoS Scribes
 - type: UndecidedLoadoutBackpackSet
@@ -993,12 +1029,13 @@
   content:
   - KitTownGuard_Brea
 
-- type: UndecidedLoadoutBackpackSet
-  id: TownGuard_Riot_Set
-  name: undecided-loadout-category-town-riot-name
-  description: undecided-loadout-category-town-riot-description
-  sprite:
-    sprite: _Nuclear14/Objects/Misc/kits.rsi
-    state: rifleman
-  content:
-  - KitTownGuard_Riot
+# Forge: TownGuard_Riot_Set disabled (KitTownGuard_Riot disabled)
+#- type: UndecidedLoadoutBackpackSet
+#  id: TownGuard_Riot_Set
+#  name: undecided-loadout-category-town-riot-name
+#  description: undecided-loadout-category-town-riot-description
+#  sprite:
+#    sprite: _Nuclear14/Objects/Misc/kits.rsi
+#    state: rifleman
+#  content:
+#  - KitTownGuard_Riot

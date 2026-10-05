@@ -1,10 +1,13 @@
 - type: entity
   name: N14BasePistol
-  parent: BaseItem
+  parent: [ BaseItem, ForgeGunConditionProfileSidearm ]
   id: N14BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  - type: Tag
+    tags:
+    - Sidearm
   - type: Sprite
     layers:
       - state: base
@@ -68,14 +71,23 @@
   - type: FollowDistance
     backStrength: 6
   - type: Craftable
+  - type: MeleeWeapon # Forge-Change
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 5
+    bluntStaminaDamageFactor: 1.25
 
 - type: entity
   name: N14BaseInternalPistol
-  parent: BaseItem
+  parent: [ BaseItem, ForgeGunConditionProfileSidearm ]
   id: N14BaseWeaponInternalMagPistol
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  - type: Tag
+    tags:
+    - Sidearm
   - type: Sprite
     layers:
       - state: base
@@ -120,6 +132,12 @@
     price: 5
   - type: FollowDistance
     backStrength: 6
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 5
+    bluntStaminaDamageFactor: 1.25
 
 - type: entity
   name: 9mm Pistol
@@ -294,7 +312,7 @@
 
 - type: entity
   name: 10mm pipe pistol
-  parent: N14BaseWeaponPistol
+  parent: [ N14BaseWeaponPistol, ForgeGunConditionProfilePistolPipe ] # Forge-Change
   id: N14WeaponPistol10mmPipe
   description: A shoddy makeshift 10mm pistol, the grip is incredibly uncomfortable. Uses 10mm ammo.
   components:
@@ -335,7 +353,6 @@
             - N14CartridgePistol10
   - type: StaticPrice
     price: 15
-
 
 - type: entity
   parent: N14WeaponPistol10mmPipe
@@ -395,6 +412,19 @@
       - N14CartridgePistol9
   - type: StaticPrice
     price: 20
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 135
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: the spy
@@ -429,6 +459,19 @@
       - N14CartridgePistol9
   - type: StaticPrice
     price: 75
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 135
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: 22lr Pistol

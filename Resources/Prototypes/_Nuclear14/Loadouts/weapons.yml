@@ -2,7 +2,7 @@
 - type: loadout
   id: N14WeaponPistol22lr
   category: Weapons
-  cost: 2
+  cost: 1 # Forge-Change
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
@@ -79,29 +79,6 @@
   items:
     - N14WeaponPistol9mm
 
-# Shotguns
-- type: loadout
-  id: N14WeaponShotgunDoubleBarrel
-  category: Weapons
-  cost: 2
-  requirements:
-    - !type:OverallTimeRequirement
-      min: 3600
-    - !type:CharacterItemGroupRequirement
-      group: N14LoadoutGuns
-    - !type:CharacterDepartmentRequirement # Forge-Change
-      inverted: true
-      departments:
-      - Vault
-    - !type:CharacterJobRequirement # Forge-Change
-      inverted: true
-      jobs:
-      - BoSMidSerf
-      - CaesarLegionSlave
-      - NCRPisoner
-  items:
-    - N14WeaponShotgunDoubleBarrel
-
 # Rifles
 
 - type: loadout
@@ -130,7 +107,7 @@
 - type: loadout
   id: N14SpeedLoader9
   category: Weapons
-  cost: 1
+  cost: 2 # Forge-Change
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutAmmo
@@ -144,7 +121,10 @@
       - BoSMidSerf
       - CaesarLegionSlave
       - NCRPisoner
-  items:
+  items: #Forge-change
+    - SpeedLoader9
+    - SpeedLoader9
+    - SpeedLoader9
     - SpeedLoader9
 
 # Melee

@@ -85,6 +85,10 @@
   id: N14MobRaiderBoss
   description: Boss of all those psycho raiders you see around this area. Good luck!
   components:
+    - type: MobThresholds 
+      thresholds:
+        0: Alive
+        175: Dead  # Forge-end  
     - type: Gun
       minAngle: 10
       maxAngle: 34.5
@@ -238,7 +242,7 @@
         sprite: Objects/Misc/handcuffs.rsi
         state: body-overlay-2
         visible: false
-      - sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/double_shotgun.rsi
+      - sprite: _Nuclear14/Objects/Weapons/Guns/Snipers/piperifle.rsi
         state: inhand-right # Only part we change, the gun sprite.
 
 - type: entity
@@ -328,6 +332,13 @@
   id: N14MobFernMercPrivate
   description: Professional mercenary armed with a carbine. One might be better off avoiding him.
   components:
+    - type: MovementSpeedModifier # Forge-Start
+      baseWalkSpeed: 4                         
+      baseSprintSpeed: 5.125 
+    - type: MobThresholds 
+      thresholds:
+        0: Alive
+        125: Dead     # Forge-end
     - type: Gun
       minAngle: 4.5
       maxAngle: 13.5
@@ -409,6 +420,13 @@
   id: N14MobFernMercSergeant
   description: Professional mercenary armed with a combat shotgun. This man can finish anyone off in close quarters.
   components:
+    - type: MovementSpeedModifier # Forge-Start
+      baseWalkSpeed: 4                         
+      baseSprintSpeed: 5.4  
+    - type: MobThresholds 
+      thresholds:
+        0: Alive
+        150: Dead # Forge-end   
     - type: Gun
       minAngle: 34.5
       maxAngle: 104
@@ -490,6 +508,13 @@
   id: N14MobFernMercLieutenant
   description: Professional mercenary armed with an SMG. Looks like an officer, more might be around!
   components:
+    - type: MovementSpeedModifier # Forge-start
+      baseWalkSpeed: 4                         
+      baseSprintSpeed: 5.625   
+    - type: MobThresholds 
+      thresholds:
+        0: Alive
+        200: Dead  # Forge-end
     - type: Gun
       minAngle: 1.5
       maxAngle: 13.5
@@ -733,6 +758,10 @@
   id: N14MobEnforcerChief
   description: Rough man in fine clothes, carrying a magnum revolver.
   components:
+    - type: MobThresholds 
+      thresholds:
+        0: Alive
+        175: Dead  # Forge-end 
     - type: Gun
       minAngle: 4.5
       maxAngle: 13.5

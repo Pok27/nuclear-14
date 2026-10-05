@@ -3,6 +3,8 @@
   name: job-name-vault-dweller
   description: job-description-vault-dweller
   requirements:
+  - !type:MinPlayersRequirement
+    min: 20 # Forge-Change
   - !type:CharacterSpeciesRequirement
     species:
     - Human
@@ -35,7 +37,7 @@
   innerClothingSkirt: N14ClothingUniformJumpsuitVault14
   storage: # Forge-Change
     back:
-    - N14Bandage
+    - N14CleanGauze10
     - N14CurrencyPrewarMoney100
 
 - type: playTimeTracker

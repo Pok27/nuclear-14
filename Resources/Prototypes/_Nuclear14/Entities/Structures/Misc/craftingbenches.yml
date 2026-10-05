@@ -84,10 +84,14 @@
     - N14LongSword
     - N14Bola
     - Handcuffs
+    - N14ClothingHandsKnucklesWithClaws
+    - N14ClothingHandsKnuckles
     # Blueprints Corvax Forge
     - N14WeaponLaserRevolverBlueprint
     - N14WeaponLaserRifleMakeshiftBlueprint
+    - N14WeaponPlasmaRifleCrudeBlueprint
     - N14WeaponRifle556PipeBlueprint
+    - N14InjectionCarbineBlueprint
     # Gun Parts
     - N14JunkGunpartsAction
     - N14JunkGunpartsBarrel
@@ -120,6 +124,7 @@
       - Sheet
       - RawMaterial
       - Ingot
+      - Cartridge
   - type: Lathe
     idleState: icon
     runningState: icon # change this
@@ -133,6 +138,7 @@
     - Magazine762Rifle
     - Magazine762AmmoShort
     - Magazine762AmmoBelt
+    - Magazine762PKMBox # Forge-add
     - MagazineBox762
     - SpeedLoader9
     - N14MagazinePistol9mm
@@ -146,10 +152,10 @@
     - N14MagazineSMG12mm
     - N14TopMagazineSMG12mm
     - MagazineBox12
-    - N14ShellShotgun12
+    # - N14ShellShotgun12
     - N14MagazineShotgun12
     - MagazineBox12gauge
-    - N14ShellShotgun20
+    # - N14ShellShotgun20
     - N14MagazineShotgun20
     - MagazineBox20gauge
     - N14MagazinePistol22lr
@@ -169,6 +175,7 @@
     - SpeedLoader45-70
     - SpeedLoader45-70Tube
     - MagazineBox45-70
+    - N14Cartridge50
     - N14Magazine50AMR
     - MagazineBox50
     # Forge-Change-Start
@@ -176,7 +183,11 @@
     - MagazineBox545
     - Magazine545Rifle
     - MagazineDrum545Rifle
+    - 40mmGrenadeShrapnel
     # Forge-Change-End
+  - type: MaterialStorageMagnetPickup
+    magnetEnabled: True
+    range: 1.25
 
 - type: entity
   categories: [ HideSpawnMenu ] # Forge-change
@@ -267,6 +278,8 @@
     - N14ClothingOuterCombatArmorMK2Blueprint
     # Forge-Change-End
     # Other
+    - MaterialCloth # Forge-add
+    - N14MaterialThread # Forge-add
     - N14MaterialLeather
     - ClothingBeltQuiver # In misc.yml
     - ClothingBeltQuiverSpear
@@ -299,10 +312,14 @@
     - N14MiningDrill
     - N14HandheldRadio
     #Misc
+    - N14TapeRecorder
+    - N14CassetteTape
     - N14FlashlightLantern
     - N14GlowstickRed
     - N14CleanGauze1
     - DoorElectronics
+    - MagazineBoxNail # Forge-Change
+    - DrumMagazineNailGun # Forge-Change
 
 - type: entity
   parent: BaseStructure
@@ -426,21 +443,29 @@
     - N14HydroponicsToolClippers
     - N14HandLabeler
     - OreBag # Forge-add
+    - ClothingHeadHatWelding # Forge-add
+    - Binoculars # Forge-add
     # Kitchen
     - N14DrinkNukaColaEmpty # Forge-add
     - N14JunkTincan # Forge-add
     - N14ButchersCleaver
     - N14KitchenKnife
-    - N14DrinkMug
+    - N14RollingPin
     - N14DrinkMugMetal
+    - N14Spoon
+    - N14Fork
     - N14DrinkGlass
     - N14DrinkShotGlass
     - N14DrinkGlassCoupeShaped
+    - N14DrinkShaker
+    - N14BarSpoon
+    - N14DrinkJigger
     - N14FoodPlate
     - N14FoodPlateSmall
     - N14FoodPlatePlastic
     - N14FoodPlateSmallPlastic
     - N14FoodPlateTin
+    - N14FoodBowlBig
     - N14FoodKebabSkewer
     - N14JunkCookpot
     - N14JunkCoffeepot
@@ -458,8 +483,10 @@
     # - N14WeaponSprayNozzle # Forge-Change
     # - N14ClothingBackpackWaterTank # Forge-Change
     # Chemistry
+    - Medkit
     - ChemBag # Forge-add
-    - Syringe # Forge-add
+    - N14DoctorSyringe # Forge-add
+    - N14InjectionSyringe # Forge-add
     - N14Beaker
     - N14LargeBeaker
     - N14Dropper
@@ -467,23 +494,23 @@
     # - N14SyringeInjectable
     - N14PillCanister
     - N14ChemistryEmptyBottle01
-    - N14PillCanisterRadX
-    - N14PillCanisterMentats
-    - N14PillCanisterBuffout
-    - N14PillCanisterCateye
-    - N14PillCanisterFixer
-    - N14JetInhaler
-    - N14TurboInhaler
-    - N14HydraInhaler
-    - N14StimpakEmpty # Forge-add
-    - N14ChemicalSyringeAntidoteEmpty
-    - N14PsychoSyringe
-    - N14RadAwayPhialEmpty
+    # - N14PillCanisterRadX # Forge-add-start
+    # - N14PillCanisterMentats
+    # - N14PillCanisterBuffout
+    # - N14PillCanisterCateye
+    # - N14PillCanisterFixer
+    # - N14JetInhaler
+    # - N14TurboInhaler
+    # - N14HydraInhaler
+    # - N14StimpakEmpty 
+    # - N14ChemicalSyringeAntidoteEmpty
+    # - N14PsychoSyringe
+    # - N14RadAwayPhialEmpty # Forge-add-end
     # Misc
-    # - N14LightTube # Forge-Change
-    # - N14LedLightTube # Forge-Change
-    # - N14SodiumLightTube # Forge-Change
-    # - N14ExteriorLightTube # Forge-Change
+    - N14LightTube
+    - N14LedLightTube
+    - N14SodiumLightTube
+    - N14ExteriorLightTube
     - N14LightBulb
     - N14LedLightBulb
     - N14Flare
@@ -567,6 +594,8 @@
     - N14SheetSteel
     - N14SheetGlass
     - N14IngotLead
+    - N14IngotAluminum    # Forge-add
+    - N14IngotBrass       # Forge-add
     - SulfurPowder
     # Scrap
     - SheetPlasticScrap

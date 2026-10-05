@@ -72,3 +72,18 @@
 
 - type: Tag
   id: N14Gladius
+
+- type: Tag
+  id: DrumMagazineNailGun
+
+- type: Tag
+  id: N14CartridgeNail
+
+- type: Tag
+  id: N14BoxPlasticFilledMilitaryLegion
+
+- type: Tag 
+  id: Binoculars
+
+- type: Tag
+  id: N14PowerCellFusionCellAdvansed

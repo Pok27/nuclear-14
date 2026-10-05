@@ -838,25 +838,25 @@
   description: A bunch of light steel plates connected to a hollow regular vest, designed to protect during melee combat.
   components:
   - type: Sprite
-    sprite: Corvax/Clothing/OuterClothing/Armor/falloutNCRvest.rsi # Forge-Change
+    sprite: Corvax/Clothing/OuterClothing/Armor/falloutNCRplatearmor.rsi # Forge-Change
   - type: Clothing
-    sprite: Corvax/Clothing/OuterClothing/Armor/falloutNCRvest.rsi # Forge-Change
+    sprite: Corvax/Clothing/OuterClothing/Armor/falloutNCRplatearmor.rsi # Forge-Change
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
+        Blunt: 0.7
         Slash: 0.7
-        Piercing: 0.75
-        Heat: 0.8
+        Piercing: 0.675
+        Heat: 0.7
     priceMultiplier: 0.6
   - type: ExplosionResistance
-    damageCoefficient: 0.75
+    damageCoefficient: 0.7
   - type: Reflect
     reflectProb: 0.05
     spread: 150
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.92
+    sprintModifier: 0.92
 
 # Forge-Delete-Start
 # - type: entity
@@ -1907,12 +1907,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.825
-        Slash: 0.725
-        Piercing: 0.825
-        Heat: 0.875
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.75
+        Heat: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.8
   - type: StaticPrice
     price: 50
 
@@ -1929,10 +1929,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.775
-        Slash: 0.675
-        Piercing: 0.775
-        Heat: 0.825
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.65
+        Heat: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.975
-    sprintModifier: 0.975
+    walkModifier: 0.9
+    sprintModifier: 0.9

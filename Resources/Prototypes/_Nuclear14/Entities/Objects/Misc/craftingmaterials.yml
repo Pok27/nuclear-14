@@ -34,6 +34,7 @@
   - type: Tag
     tags:
       - RawLeather
+      # - ForgeLootHide # Forge-Change-Del
   - type: PhysicalComposition
     materialComposition:
       RawLeather: 400
@@ -86,6 +87,8 @@
   - type: Tag
     tags:
       - NightstalkerPelt
+      - RawLeather # Forge-Change
+      # - ForgeLootHide # Forge-Change-Del
   - type: PhysicalComposition
     materialComposition:
       RawLeather: 300
@@ -104,6 +107,7 @@
     tags:
       - YaoguaiHide
       - RawLeather
+      # - ForgeLootHide # Forge-Change-Del
   - type: PhysicalComposition
     materialComposition:
       RawLeather: 600
@@ -111,7 +115,7 @@
     price: 50
 
 - type: entity
-  parent: BaseItem
+  parent: N14MaterialBaseHide # Forge-Change
   id: N14MaterialHideGecko
   name: silver gecko hide
   description: A thick hide from a gecko.
@@ -121,6 +125,7 @@
     state: hide_gecko
   - type: Tag
     tags:
+      - GeckoHide # Forge-Change
       - RawLeather
   - type: PhysicalComposition
     materialComposition:

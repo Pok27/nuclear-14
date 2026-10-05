@@ -1,15 +1,21 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Server.Language; // Forge-Change
 using Content.Server.Popups;
 using Content.Shared.UserInterface;
 using Content.Shared.Database;
 using Content.Shared.Examine;
+using Content.Shared.Ghost; // Forge-Change
 using Content.Shared.Interaction;
+using Content.Shared.Language; // Forge-Change
+using Content.Shared.Language.Components; // Forge-Change
+using Content.Shared.Language.Systems; // Forge-Change
 using Content.Shared.Paper;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes; // Forge-Change
 using static Content.Shared.Paper.SharedPaperComponent;
 
 namespace Content.Server.Paper
@@ -19,6 +25,8 @@ namespace Content.Server.Paper
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+        [Dependency] private readonly LanguageSystem _language = default!; // Forge-Change
+        [Dependency] private readonly PaperLanguageSystem _paperLanguage = default!; // Forge-Change
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
@@ -46,10 +54,14 @@ namespace Content.Server.Paper
             {
                 paperComp.Content = Loc.GetString(paperComp.Content);
             }
+
+            _paperLanguage.EnsureSegments(uid, paperComp); // Forge-Change
         }
 
         private void OnInit(EntityUid uid, PaperComponent paperComp, ComponentInit args)
         {
+            EnsureComp<PaperLanguageComponent>(uid); // Forge-Change
+
             paperComp.Mode = PaperAction.Read;
             UpdateUserInterface(uid, paperComp);
 
@@ -141,25 +153,56 @@ namespace Content.Server.Paper
 
         private void OnInputTextMessage(EntityUid uid, PaperComponent paperComp, PaperInputTextMessage args)
         {
+            // Forge-Change-Start
+            if (!CanWriteLanguage(args.Actor, args.Language))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("paper-language-cannot-write"), uid, args.Actor);
+                paperComp.Mode = PaperAction.Read;
+                UpdateUserInterface(uid, paperComp);
+                return;
+            }
+            // Forge-Change-End
+
             if (args.Text.Length <= paperComp.ContentSize)
             {
-                paperComp.Content = args.Text;
+                // Forge-Change: keep unknown stretches; rewrite known text in the chosen language
+                if (_paperLanguage.TryApplyWriting(uid, paperComp, args, out var content)
+                    && content.Length <= paperComp.ContentSize)
+                {
+                    paperComp.Content = content;
 
-                if (TryComp<AppearanceComponent>(uid, out var appearance))
-                    _appearance.SetData(uid, PaperVisuals.Status, PaperStatus.Written, appearance);
+                    if (TryComp<AppearanceComponent>(uid, out var appearance))
+                        _appearance.SetData(uid, PaperVisuals.Status, PaperStatus.Written, appearance);
 
-                if (TryComp<MetaDataComponent>(uid, out var meta))
-                    _metaSystem.SetEntityDescription(uid, "", meta);
+                    if (TryComp<MetaDataComponent>(uid, out var meta))
+                        _metaSystem.SetEntityDescription(uid, "", meta);
 
-                _adminLogger.Add(LogType.Chat, LogImpact.Low,
-                    $"{ToPrettyString(args.Actor):player} has written on {ToPrettyString(uid):entity} the following text: {args.Text}");
+                    _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                        $"{ToPrettyString(args.Actor):player} has written on {ToPrettyString(uid):entity} the following text: {args.Text}");
 
-                _audio.PlayPvs(paperComp.Sound, uid);
+                    _audio.PlayPvs(paperComp.Sound, uid);
+                }
             }
 
             paperComp.Mode = PaperAction.Read;
             UpdateUserInterface(uid, paperComp);
         }
+
+        // Forge-Change-Start
+        private bool CanWriteLanguage(EntityUid actor, string? language)
+        {
+            if (string.IsNullOrEmpty(language))
+                return true;
+
+            ProtoId<LanguagePrototype> languageId = language;
+            if (languageId == SharedLanguageSystem.UniversalPrototype || _language.GetLanguagePrototype(languageId) == null)
+                return false;
+
+            return HasComp<GhostComponent>(actor)
+                   || TryComp<UniversalLanguageSpeakerComponent>(actor, out var uni) && uni.Enabled
+                   || _language.CanSpeak(actor, languageId);
+        }
+        // Forge-Change-End
 
         private void OnPaperWrite(EntityUid uid, ActivateOnPaperOpenedComponent comp, ref PaperWriteEvent args)
         {

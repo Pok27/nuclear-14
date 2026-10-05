@@ -12,6 +12,7 @@ public sealed class ContractObjectiveConfigData
     public int AcceptTimeoutSeconds;
     public bool AllowStoreWorldTurnIn;
     public int? GhostRoleCharacterAge;
+    public Color? GhostRoleCharacterFacialHairColor;
     public Gender? GhostRoleCharacterGender;
     public Color? GhostRoleCharacterHairColor;
     public Sex? GhostRoleCharacterSex;
@@ -57,9 +58,11 @@ public sealed class ContractObjectiveConfigData
     public string GhostRolePrototype { get; set; } = string.Empty;
     public string GhostRoleName { get; set; } = string.Empty;
     public string GhostRoleDescription { get; set; } = string.Empty;
+    public string GhostRoleIcon { get; set; } = string.Empty;
     public string GhostRoleRules { get; set; } = string.Empty;
     public List<CharacterRequirement> GhostRoleRequirements { get; set; } = new();
     public string GhostRoleCharacterName { get; set; } = string.Empty;
+    public string GhostRoleCharacterFacialHair { get; set; } = string.Empty;
     public string GhostRoleCharacterHair { get; set; } = string.Empty;
     public List<string> GhostRolePerks { get; set; } = new();
     public string GhostRoleSurvivalBriefing { get; set; } = string.Empty;

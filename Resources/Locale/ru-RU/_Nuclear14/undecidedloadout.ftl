@@ -120,11 +120,11 @@ undecided-loadout-category-med-doc-description =
 
 undecided-loadout-category-med-combat-name = Набор боевого медика
 undecided-loadout-category-med-combat-description =
-    Ящик со всем необходимым для заботы о других бойцах.
-    Содержит: 1 дробовик, 1 коробку патронов (12-gauge),
-     1 пистолет Browning HP, 2 пистолетных магазина
-    (9mm Parabellum), сухпаёк типа C, 1 пакет крови, 1 инжектор антидота,
-    2 стимпака, 1 антирад, 2 набора бинтов.
+    Ящик со всем необходимым для заботы о противниках.
+    Содержит: 1 инъекционный карабин, 3 инъекционный шприца, 1 бутылочка с бесцветным ядом,
+    1 бутылочка с ядом "последний вздох", 1 пистолет Browning HP, 
+    2 пистолетных магазина (9mm Parabellum), сухпаёк типа C, 1 пакет крови, 
+    1 инжектор антидота, 2 стимпака, 1 антирад, 2 набора бинтов.
 
 # Наборы оружейных специалистов НКР
 
@@ -250,7 +250,7 @@ undecided-loadout-category-veteran-ranger-service-description =
 undecided-loadout-category-veteran-ranger-precision-rifle-name = Набор снайпера ветерана-рейнджера
 undecided-loadout-category-veteran-ranger-precision-rifle-description =
     Тайник с вещами ветерана-рейнджера.
-    Содержит: 1 винтовку "Очиститель зарослей", 3 спидлоадера винтовочных (.45-70 Gov't),
+    Содержит: 1 медвежье ружьё, 3 спидлоадера винтовочных (.45-70 Gov't),
     1 коробка патронов (45-70 Gov't), 2 стимпака, 1 сухпаёк типа C.
 
 undecided-loadout-category-veteran-ranger-heavy-sniper-name = Набор тяжелого снайпера ветерана-рейнджера
@@ -292,6 +292,13 @@ undecided-loadout-category-mbos-init-bal-description =
     Содержит: 1 старый карабин, 3 магазина 5.56, 1 AEP-7, 2 энергоячейки,
     1 рулон бинтов и сухпаёк типа K.
 
+undecided-loadout-category-mbos-init-sttr-name = Набор послушника (штурмовик)
+undecided-loadout-category-mbos-init-sttr-description =
+    Тайник с вещами послушника Среднезападного Братства.
+    Содержит: 1 пистолет пулемёт М3, 3 магазина ПП (9mm Parabellum), 1 AEP-7, 2 энергоячейки, 
+    лёгкий металлический щит, 9 лома, 15 стали,
+    1 рулон бинтов и сухпаёк типа K.
+
 undecided-loadout-category-mbos-kni-las-name = Набор рыцаря (лазеры)
 undecided-loadout-category-mbos-kni-las-description =
     Тайник с вещами рыцаря Среднезападного Братства.
@@ -303,6 +310,19 @@ undecided-loadout-category-mbos-kni-bal-description =
     Тайник с вещами рыцаря Среднезападного Братства.
     Содержит: 1 штурмовой карабин, 3 магазина 5.56, 1 AEP-7, 2 энергоячейки,
     1 рулон бинтов и сухпаёк типа K.
+
+undecided-loadout-category-mbos-kni-sttr-name = Набор рыцаря (штурмовик)
+undecided-loadout-category-mbos-kni-sttr-description =
+    Тайник с вещами рыцаря Среднезападного Братства.
+    Содержит: 1 пистолет-пулемёт 10мм, 3 магазина пп(10mm auto), 1 AEP-7, 
+    2 энергоячейки, тяжелый металлический щит, 15 лома, 25 стали,
+    1 рулон бинтов и сухпаёк типа K.
+
+undecided-loadout-category-mbos-kni-snip-name = Набор рыцаря (снайпер)
+undecided-loadout-category-mbos-kni-snip-description =
+    Тайник с вещами рыцаря Среднезападного Братства.
+    Содержит: 1 F1, 2 коробки патронов 308, 1 AEP-7, 2 энергоячейки,
+    1 рулон бинтов, 1 бинокль и сухпаёк типа K.
 
 undecided-loadout-category-mbos-scribe-medic-name = Набор писаря-медика
 undecided-loadout-category-mbos-scribe-medic-description =
@@ -335,7 +355,7 @@ undecided-loadout-category-mbos-pal-las-description =
 undecided-loadout-category-mbos-pal-bal-name = Набор паладина (баллистика)
 undecided-loadout-category-mbos-pal-bal-description =
     Тайник с вещами паладина Среднезападного Братства.
-    Содержит: 1 штурмовой карабин, 3 магазина 5.56, 1 AEP-7, 2 энергоячейки,
+    Содержит: 1 миниган, 2 коробки патрон (5мм), 1 AEP-7, 2 энергоячейки,
     1 рулон бинтов, 1 стимпак и сухпаёк типа K.
 
 undecided-loadout-category-mbos-pal-sni-name = Набор паладина-снайпера
@@ -479,33 +499,31 @@ undecided-loadout-category-Tribal-pain-bringer-description =
 
 # Наборы городской стражи
 
-undecided-loadout-category-town-cere-name = Церемониальный набор
+undecided-loadout-category-town-cere-name = Набор классика
 undecided-loadout-category-town-cere-description =
-    Иногда нужно выглядеть презентабельно, не заботясь о защите.
-    Содержит: 1 стражную шляпу, 1 стражный плащ, 1 самозарядную винтовку,
-    3 обоймы (.308 Winchester), 1 револьвер "Магнум", 2 револьверных спидлоадера (.44 Magnum),
-    1 рулон бинтов и базовый сухпаёк.
+    Поcвещаю вам давить всех тварей, кто посигнёт на жизни жителей, 
+    этой автоматической винтовкой триста восьмого калибра, слава городу!
+    Содержит: 1 автоматическая винтовка, 2 магазина винтовочных,
+    2 пачки патрон .308, 1 рулон бинтов, 2 стимпака и базовый сухпаёк.
 
-undecided-loadout-category-town-patr-name = Набор патрульного
+undecided-loadout-category-town-patr-name = Набор защитника
 undecided-loadout-category-town-patr-description =
-    Вы не просите много от жизни - вам нужно только простое.
-    Содержит: 1 каску Броди, 1 лёгкую броню, 1 12.7мм ПП,
-    3 магазина 12.7мм, 1 пистолет Webley, 2 пистолетных магазина (9mm Parabellum),
-    1 дождевой плащ, 1 рулон бинтов и базовый сухпаёк.
+    Защищайте жителей, герой! Не дай им погибнуть!
+    Содержит: 1 12.7мм ПП продвинутый, 2 магазина ПП, 2 пачки патрон 12.7,
+    1 тяжёлый щит, 1 рулон бинтов, 2 стимпака и базовый сухпаёк.
 
-undecided-loadout-category-town-lawb-name = Набор законника
+undecided-loadout-category-town-lawb-name = Набор пулемётчика
 undecided-loadout-category-town-lawb-description =
-    ДАККА ДАККА! Время подавить восстание, или...?
-    Содержит: 1 каску Броди, 1 лёгкую броню, 1 канадский ручной пулемёт,
-    1 ленту 7.62, 1 рулон бинтов и базовый сухпаёк.
-    Больше ничего - сокращение бюджета!
+    "Я увидел, как забирают пулемёт и у меня чуть не случился сердечный приступ.
+    Это чёрт возьми не допустимо! Неужели стража не можем его себе позволить?!"
+    Содержит: 1 канадский пулемёт, 2 ленты пулеметные, 
+    2 стимпака, 1 рулон бинтов и базовый сухпаёк.
 
-undecided-loadout-category-town-brea-name = Набор штурмовика
+undecided-loadout-category-town-brea-name = Набор берсерка
 undecided-loadout-category-town-brea-description =
-    Только когда не нужно беспокоиться о дружественном огне!
-    Содержит: 1 самозарядный дробовик, 1 коробку патронов 12 калибра,
-    1 пистолет Webley, 2 пистолетных магазина (9mm Parabellum),
-    1 рулон бинтов и базовый сухпаёк.
+    О, ты явно любишь встревать в всякие неприятности, я угадал?
+    Содержит: 1 пластинчатая маска, 1 штурмововой дробовик, 3 коробки 12 калибра, 
+    2 стимпака, 2 психо, 1 рулон бинтов, 1 боевая аптечка и базовый сухпаёк.
 
 undecided-loadout-category-town-riot-name = Набор для подавления беспорядков
 undecided-loadout-category-town-riot-description =
@@ -532,6 +550,17 @@ undecided-loadout-category-inquisitorplasma-description =
     Плазменный набор, для самых жестоких Инквизиторов Братства.
     В комплект входит: автоматическая плазменная винтовка с 3 батареями,
     сухпаек, набор бинтов, набор мазей, 2 стимпака и 1 супер-стимпак, а так-же разгрузочный жилет.
+
+# Коммандер СЗБС
+undecided-loadout-category-midwest-command-wattz-name = Снайперский набор
+undecided-loadout-category-midwest-command-wattz-description = 
+    В комплект входит: 1 Wattz 3000, 3 тяжёлые микроядерные батариеи, 
+    набор бинтов, 2 стимпака, сухпаёк типа К.  
+
+undecided-loadout-category-midwest-command-gatling-name = Пулемётный набор
+undecided-loadout-category-midwest-command-gatling-description =
+    В комплект входит: 1 гатлинг-лазер, 2 ядерные батареи, 
+    набор бинтов, 2 стимпака, сухпаёк типа К.
 
 # Следователь ВП НКР
 undecided-loadout-category-NCRMPMilitaryPolice-name = Набор военного полицейского НКР

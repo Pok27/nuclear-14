@@ -1,4 +1,4 @@
-# Legion kits
+#MARK: Legion kits
 - type: entity
   id: LegionCenturionloadoutkits
   name: kit
@@ -62,6 +62,8 @@
     - VeteranFirearmSet
     - VeteranBerserkerSet
     - VeteranKebabSet
+    - VeteranSuppressorSet
+    - VeteranSwordsmanSet
 
 - type: entity
   id: LegionWarriorloadoutkits
@@ -76,6 +78,7 @@
     - WarriorHealerSet
     - WarriorFirearmSet
     - WarriorMeleeSet
+    - WarriorSpearSet
 
 - type: entity
   id: LegionRecruitloadoutkits
@@ -90,7 +93,7 @@
     - RecruitMeleeSet
     - RecruitHealerSet
 
-#Washington kits
+#MARK: Washington kits
 
 # Непонятный набор, который не используются ролями BoS Washington.
 - type: entity
@@ -135,7 +138,7 @@
       enum.UndecidedLoadoutBackpackUIKey.Key:
         type: UndecidedLoadoutBackpackBoundUserInterface
 
-# Непонятный набор, который не используются ролью "Лорд" из BoS Washington. 
+# Непонятный набор, который не используются ролью "Лорд" из BoS Washington.
 - type: entity
   id: BoSWashingtonCommandKits
   name: Undecided BoS Washington Kit
@@ -376,6 +379,16 @@
   - KitVeteranBerserker
 
 - type: UndecidedLoadoutBackpackSet
+  id: VeteranSuppressorSet
+  name: undecided-loadout-category-veteran-suppressor-name
+  description: undecided-loadout-category-veteran-suppressor-description
+  sprite:
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  content:
+  - KitVeteranSuppressor
+
+- type: UndecidedLoadoutBackpackSet
   id: VeteranKebabSet
   name: undecided-loadout-category-veteran-kebab-name
   description: undecided-loadout-category-veteran-kebab-description
@@ -384,6 +397,16 @@
     state: base
   content:
   - KitVeteranKebab
+
+- type: UndecidedLoadoutBackpackSet
+  id: VeteranSwordsmanSet
+  name: undecided-loadout-category-veteran-swordsman-name
+  description: undecided-loadout-category-veteran-swordsman-description
+  sprite:
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  content:
+  - KitVeteranSwordsman
 
 - type: UndecidedLoadoutBackpackSet
   id: WarriorBaseSet
@@ -434,6 +457,16 @@
     state: base
   content:
   - KitWarriorMelee
+
+- type: UndecidedLoadoutBackpackSet
+  id: WarriorSpearSet
+  name: undecided-loadout-category-warrior-spear-name
+  description: undecided-loadout-category-warrior-spear-description
+  sprite:
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  content:
+  - KitWarriorSpear
 
 - type: UndecidedLoadoutBackpackSet
   id: RecruitBaseSet

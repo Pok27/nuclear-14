@@ -1,6 +1,6 @@
 - type: entity
   name: automatic rifle
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, ForgeGunConditionProfileLMG ]
   id: N14WeaponLMGAutoRifle
   description: A high caliber, low-capacity heavy machine gun of the pre-war, chambered in the powerful .308 ammunition.
   components:
@@ -26,7 +26,7 @@
     maxAngle: 60
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 4
+    fireRate: 3.5 # Forge-Change
     soundGunshot:
       collection: N14AutoRifleGunshot
     selectedMode: FullAuto
@@ -63,10 +63,16 @@
     backStrength: 6
   - type: StaticPrice
     price: 300
+  - type: MeleeWeapon # Forge-Change
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 5
+    bluntStaminaDamageFactor: 1.25
 
 - type: entity
   name: canadian HMG
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, ForgeGunConditionProfileLMG ]
   id: N14WeaponHMGcanadian
   description: A powerfull belt feed machine gun commonly used by the pre-war canadian army, chambered in 7.62mm ammunition.
   components:
@@ -129,10 +135,15 @@
     backStrength: 6
   - type: StaticPrice
     price: 600
-
+  - type: MeleeWeapon # Forge-Change
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 15
+    bluntStaminaDamageFactor: 1.25
 - type: entity
   name: chinese LMG
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, ForgeGunConditionProfileLMG ]
   id: N14WeaponLMGchinese
   description: A pre-war chinese light machine gun, chambered in 7.62mm ammunition.
   components:
@@ -195,10 +206,16 @@
     backStrength: 6
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon # Forge-Change
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 15
+    bluntStaminaDamageFactor: 1.25
 
 - type: entity
   name: light machine gun
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, ForgeGunConditionProfileLMG ]
   id: N14WeaponLMG
   description: A light machine gun designed by the NCR for their heavy troops, chambered in 5.56 ammo.
   components:
@@ -261,10 +278,17 @@
     backStrength: 6
   - type: StaticPrice
     price: 475
+  - type: MeleeWeapon # Forge-Change
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 15
+    bluntStaminaDamageFactor: 1.25
+
 
 - type: entity
   name: bren machine gun
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, ForgeGunConditionProfileLMG ]
   id: N14WeaponLMGBren
   description: A high-caliber, high-damage, heavy machine gun mass-produced by the RCMP, chambered in the powerful .308 ammunition.
   components:
@@ -293,7 +317,7 @@
     maxAngle: 60
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 3.5 # Forge-Change
+    fireRate: 4 # Forge-Change
     soundGunshot:
       collection: N14AutoRifleGunshot
     selectedMode: FullAuto
@@ -326,6 +350,12 @@
     backStrength: 6
   - type: StaticPrice
     price: 600
+  - type: MeleeWeapon # Forge-Change
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 15
+    bluntStaminaDamageFactor: 1.25
 
 - type: entity
   name: M60 GPMG
